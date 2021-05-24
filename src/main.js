@@ -3,8 +3,8 @@ const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
 const hashMap = xObject || [
-    { logo: 'A', url: 'https://www.acfun.cn' },
-    { logo: 'B', url: 'https://bilibili.com' },
+    {logo: 'A', url: 'https://www.acfun.cn'},
+    {logo: 'B', url: 'https://bilibili.com'},
 ]
 
 const simplifyUrl = (url) => {
@@ -66,7 +66,10 @@ window.onbeforeunload = () => {
 }
 
 $(document).on('keypress', (e) => {
-    const { key } = e
+    const {key} = e
+    $('.searchForm').addEventListener('keypress', (e) => {
+        e.stopPropagation()
+    })
     console.log(key)
     console.log(hashMap)
     for (let i = 0; i < hashMap.length; i++) {

@@ -174,6 +174,9 @@ window.onbeforeunload = function () {
 
 $(document).on('keypress', function (e) {
   var key = e.key;
+  $('.searchForm').addEventListener('keypress', function (e) {
+    e.stopPropagation();
+  });
   console.log(key);
   console.log(hashMap);
 
@@ -185,4 +188,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.e2992645.js.map
+//# sourceMappingURL=main.77adfcf8.js.map
